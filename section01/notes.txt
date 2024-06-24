@@ -1,0 +1,12 @@
+# A bash script has three core parts: 
+#   - a beginning;
+#   - a middle;
+#   - and a end.
+
+# The beginning: the shebang line.
+#   - tels where the interpretor of the shell is.
+
+#!/bin/bash
+
+# The middle: the commands.
+# The end: exit statement (0 = successful; 1-255 = unsuccessful)

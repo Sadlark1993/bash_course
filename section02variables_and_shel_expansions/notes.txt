@@ -1,0 +1,90 @@
+/*
+  A parameter is an entityu that can sogtre values:
+    - variables;
+    - positional parameters;
+    - special parameters.
+
+  Shell Variables:
+    - PATH: contains the list of folders the whell will search for executable files to run as command names;
+    - HOME: Used to store the absolute path to the current use's home directory;
+    - USER: Username of the user;
+    - HOSTNAME and HOSTTYPE: tells about the computer they are using;
+    - PS1: Contains the prompt string shown in terminal before each command
+
+  You can mannualy modify any shell variables.
+*/
+
+# modifies the string before the command to '>':
+PS1="> "
+
+# modifies it back:
+source ~/.bashrc
+
+#easyprompt.net
+
+
+# ************* PARAMETER EXPANSION TRICKS *************
+
+name=ZiYaD
+
+#prints the parameter with the first letter to lower case (just add a comma to the end of the name):
+echo ${name,}
+
+#prints the parameter with all letters in lower case (just add two commas to the end of the name):
+echo ${name,,}
+
+#prints the parameter with the first letter in uppercase
+echo ${USER^}
+
+#prints the parameter with all letters in uppercase
+echo ${USER^^}
+
+#prints the length of the parameter
+echo ${#name}
+
+#prints a substring of the param. The format is ${parameter:offset:length}.
+echo ${name:2:2}
+> Ya
+
+echo ${name:2}
+> YaD
+
+#prints counting from the end of the string. It starts with -1
+echo ${name: -4:3}
+> iYa
+
+echo ${name: -3}
+> YaD
+
+
+# ************* ARITMETIC EXPANSIONS *************
+
+#parameter expansions:
+${parameter}
+
+#command substitutions:
+$(command)
+
+#aritmetic expansions:
+$((expression))
+
+
+# ************* TILDE EXPANSION *************
+
+# ~ stores the address of your home directory
+echo ~
+
+#returns the home directory of the other user
+echo ~otheruser
+
+# returns you old directory
+echo $OLDPWD
+
+# refferences the $PWD
+echo ~+
+
+# refferences the $OLDPWD
+echo ~-
+
+# go back to old directory
+cd ~-
