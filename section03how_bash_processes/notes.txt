@@ -1,0 +1,22 @@
+steps:
+1 - Tokenization:
+    -> quoting: separates tokens in words and operators:
+      - words: don't contain unquoted operators;
+      - operators: contain at least one...
+
+2 - Command Identification
+  -> breaks the command line up into either simple or compound commands
+    - simple commands: the commands we've ben using so far (echo, tar...)
+      -> a bunch of individual words;
+      -> the first word is the command name;
+      -> all the other words are arguments to that command.
+    
+    - compound commands: provides bash with its programming constructs, such as loops, conditionals and etc...
+
+3 - Expansions;
+
+4 - Quote Removal;
+
+5 - Redirection;
+
+finally, bash will execute the command line with what is left over.

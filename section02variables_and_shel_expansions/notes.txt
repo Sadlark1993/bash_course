@@ -1,5 +1,5 @@
 /*
-  A parameter is an entityu that can sogtre values:
+  A parameter is an entity that can store values:
     - variables;
     - positional parameters;
     - special parameters.
