@@ -88,5 +88,34 @@ echo: command name
 
     4. Globbing 
 
-  // The order that bash processes expansions is the same above.
-  // so, this will not work: 'x = 10; echo {1..$x}', cuz when bash process the brace exp., the value of $x is unknown.
+  # The order that bash processes expansions is the same above.
+  # so, this will not work: 'x = 10; echo {1..$x}', cuz when bash process the brace exp., the value of $x is unknown.
+
+
+################### Word Splitting ###################
+
+ - Word splitting is only performed on the results of unquoted:
+  * Parameter expansions;
+  * Command Substitutions;
+  * Arithmetc expansions;
+
+# print content of IFS variable on a visible form:
+echo "${IFS@Q}" #did't work in my shell.
+
+# this script will create 5 folders
+numbers = 1 2 3 4 5
+touch $numbers
+
+# this script will create only one folder
+numbers = 1,2,3,4,5
+touch $numbers
+
+# this script will create 5 folders cuz we've set ',' as the value of IFS variable
+IFS = ','
+numbers = 1,2,3,4,5
+touch $numbers
+
+# this script will create only 1 folders cuz we've set ',' as the value of IFS variable
+IFS = ','
+numbers = 1 2 3 4 5
+touch $numbers
