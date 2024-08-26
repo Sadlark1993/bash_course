@@ -73,4 +73,20 @@ echo: command name
   - each compound command starts with the reserved word and is terminated by a corresponding reserved word;
 
 
+################### Expansions ###################
 
+ - 4 Stages of Expansions:
+    1. Brace Expansion;
+
+    2.:
+      * Parameter Expansion;
+      * Arithmetic Expansion;
+      * Command Substitution;
+      * Tilde Expansion;
+
+    3. Word Splitting;
+
+    4. Globbing 
+
+  // The order that bash processes expansions is the same above.
+  // so, this will not work: 'x = 10; echo {1..$x}', cuz when bash process the brace exp., the value of $x is unknown.
