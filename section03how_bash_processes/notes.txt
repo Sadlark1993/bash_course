@@ -1,3 +1,5 @@
+################## Overview #####################3
+
 steps:
 1 - Tokenization:
     -> quoting: separates tokens in words and operators:
@@ -20,3 +22,55 @@ steps:
 5 - Redirection;
 
 finally, bash will execute the command line with what is left over.
+
+############## Quoting ################
+
+- Three quoting methods: backslashes, single quotes and double quotes;
+- quoting is removing the meaning of specias characteres, so they can be intepreted literally by the shell;
+
+the three types of quoting:
+
+- backslashes: Removes special meaning from next character;
+- single quotes: Removes special meaning from all characters inside;
+- double quotes: Removes special meaning from all characters inside except for $ and backticks (`).
+
+
+################### Tokenization ###################
+
+- Two types of tokens: words and operators;
+- operators: contain at least one unquoted metacharacters
+- Two types of operators: control and redirectional;
+
+- metacharacters:
+  -> |
+  -> &
+  -> ;
+  -> ()
+  -> <>
+  -> space, tab, new line
+
+  example: echo $name > out.txt
+  words: echo, $name, out.txt
+  operators: >
+
+
+################### Command Identification ###################
+
+1. Simple commands:
+
+  echo 1 2 3
+
+echo: command name
+1 2 3: individual arguments
+
+ - All simple commands are terminated by a controll operator (such as new line or ;)
+ - One command: echo a b c echo 1 2 3
+ - Two commands: echo a b c ; echo 1 2 3
+ - One command: echo $name > out  #(the operator '>' is a redirectional operator, not a control operator such as ';')
+
+2. Compound commands
+  - are bash's programming constructs;
+  - each compound command starts with the reserved word and is terminated by a corresponding reserved word;
+
+
+
